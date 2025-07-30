@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>КОЛЛАЖИ ГИЛЬДИИ «ФОРТУТТИ»</title>
+    <link rel="stylesheet" href="styleBody.css">
+    <link rel="stylesheet" href="styleNavBar.css">
+    <link rel="stylesheet" href="styleFoto.css">
+    <link rel="stylesheet" href="styleHappy.css">
+    <link rel="stylesheet" href="styleNY.css">
+    <link rel="stylesheet" href="style8Marta.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+       
+     <!-- Навигационное меню -->
+    <nav class="navbar-fortutti">
+        <div class="navbar-container">
+            <a class="navbar-brand" href="fortuttiguild.html" id="navLogo">
+                <img src="imglogo/Logotip1.gif" alt="ФорТутти">
+            </a>
+            
+            <!-- Кнопка мобильного меню -->
+            <button class="navbar-toggler" id="navbarToggler">☰</button>
+
+            
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="Administracia.html">Администрация</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="foto.html">Коллажи</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="video.html">Видео</a>
+                </li>
+            </ul>
+
+            <div class="nav-social">
+                <a class="nav-shop" href="https://store.cookingdiary.game/ru-RU/" target="_blank">
+                    <span class="shop-text">Магазин</span>
+                    <span class="game-name">Cooking Diary</span>
+                </a>
+                <a class="nav-link" href="https://vk.com/club227639548?from=groups" target="_blank">
+                    <svg class="vk-icon" viewBox="0 0 24 24">
+                        <path d="M15.073 2H8.938C3.332 2 2 3.333 2 8.927v6.136C2 20.667 3.323 22 8.927 22h6.136C20.667 22 22 20.677 22 15.073V8.938C22 3.332 20.677 2 15.073 2zm3.073 14.27h-1.459c-.552 0-.718-.447-1.708-1.437-.864-.834-1.229-.938-1.448-.938-.302 0-.385.083-.385.5v1.312c0 .354-.115.563-1.042.563-1.52 0-3.291-1.021-4.5-3.01-1.771-2.615-2.166-4.437-2.166-4.583 0-.115.083-.229.25-.229h1.459c.188 0 .26.083.323.281.656 2.177 2.104 4.083 2.635 4.083.188 0 .271-.083.271-.552v-2.146c-.063-.98-.583-1.063-.583-1.417 0-.125.104-.229.229-.229h2.292c.188 0 .271.083.271.302v3.229c0 .333.135.417.229.417.188 0 .333-.104.677-.448 1.083-1.25 1.771-3.166 1.771-3.166.104-.208.187-.291.437-.291h1.459c.146 0 .229.083.187.27-.24.76-2.5 3.708-2.5 3.708-.188.25-.271.406 0 .76.135.208.583.604 1 1.01.687.688 1.229 1.229 1.354 1.604.125.406.083.604-.333.604z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Баннер 8 марта -->
+    <div id="marchBanner" class="march-banner">
+        <div class="march-message">С 8 марта, дорогие девушки ги ФорТутти!</div>
+    </div>
+
+    <!-- Баннер дня рождения -->
+    <div id="birthdayBanner" class="birthday-banner">
+        <div class="birthday-message">С Днём рождения, самая лучшая гильдия ФорТутти!</div>
+    </div>
+
+
+    <!-- Новогодний баннер с поздравлением Ги 01.01 каждый год -->
+    <!-- Контейнер для баннера -->
+    <div class="new-year-banner-container">
+        <!-- Новогодний баннер с поздравлением Ги 01.01 каждый год -->
+        <div class="new-year-banner" id="newYearBanner">
+            <div class="banner-text-ny">С Новым Годом дорогие сектанты ги ФорТутти!!!</div>
+            <canvas id="fireworksCanvas"></canvas>
+        </div>
+    </div>
+
+
+    <section class="content-wrap">   
+        <div class="container youplay-content">
+            <div class="row">
+                <main class="col-xs-12 p-0">
+
+                    <div class="gallery-container">
+                        <h1 class="gallery-title" style="color: burlywood;">КОЛЛАЖИ ГИЛЬДИИ «ФОРТУТТИ»</h1>
+                        
+                        <div class="gallery-grid">
+                            <!-- Gallery items will be added here -->
+                            <!-- Example items (replace with your actual images and captions) -->
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/27.jpg" alt="Collage 27" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        ФорТутти🍭🍭 в будни раздавали блюда на любой вкус🍽️🍽️🍽️<br>
+                                        Создавали образы в ослепительных свадебных нарядах💃🏻🕺🏼💍<br>
+                                        Встречайте наш свадебный флешмоб!💐🥂👏🏻
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/26.jpg" alt="Collage 26" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Приготовьтесь, друзья, к самому безумному, весёлому и прибыльному пасхальному флешмобу в истории! Забудьте про унылые поиски яиц в траве – мы тут рубим капусту💸, чтобы потом с ней же и яйца закупать!<br>
+                                        Итак, правило номер один: зарабатываем как проклятые! Моем машины, выгуливаем соседкиных пуделей, продаем бабушкину коллекцию марок (шутка, бабушка!), – в общем, все средства хороши, когда на кону – победа!💰💰💰<br>
+                                        А вот и правило номер два: бегом на ярмарку! Ноги в руки, кошелек наперевес, и вперед – к самому пёстрому, расписному великолепию! Покупаем яйца всех мастей и размеров! Куриные, перепелиные, страусиные (если найдете, конечно!), – главное, чтобы влезли в корзину!🧺🧺🧺<br>
+                                        И, наконец, правило номер три: кто больше собрал яиц, тот и король (или королева) 👸🏼пасхальной ярмарки! Победителя ждет не только всеобщая слава и почет, но и, возможно, целый грузовик шоколадных зайцев!<br>
+                                        Так что хватит сидеть сложа руки! Поднимайте свои булочки, включайте смекалку, и вперед – к пасхальной яичной лихорадке! Встречайте наш Пасхальный переполох!🧺🤩🥳<br>
+                                        Поздравляем победителей:
+                                        🧺 Наталек - 37 яиц
+                                        🧺 Оливка - 33 яйца
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/25.jpg" alt="Collage 25" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        ФорТутти🍭🍭 в будни выполняли комбо-заказы🔥🔥<br>
+                                        Провели шляпный флешмоб<br>
+                                        Создавали образы в шляпах 👩‍🏭👩🏼‍🎨👩‍🌾, выбирали лучшие луки🤩<br><br>
+                                        Встречайте наших победителей:<br>
+                                        🥇Вика (10 голосов)<br>
+                                        🥈Наталек (8 голосов)<br>
+                                        🥉Эльза (7 голосов)<br><br>
+                                        Поздравляем очаровательных красоток👏🏻🥳💐💐💐
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/24.jpg" alt="Collage 24" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        ФорТутти 🍭🍭 в выходные раздавали блюда🍽️🍽️🍽️.
+                                        Играли в необычную Радугу🪅. Наряжались в непривычные цвета. Стартовали с чёрного, финишировали в золотом👸🏼. Создавали образы в полоску🩲, в клетку и даже в цветочек👘. Повеселились от души🤣😜.
+                                        Победитель задания получил персональный коллаж во всех образах радуги! 🤩 И это наша невероятная Диманя!👑<br>
+                                        Поздравляем!!!🥳🥳👏🏻<br>
+                                        Встречайте ослепительную золотую чемпионку🥇🏆💪🏻
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/23.jpg" alt="Collage 23" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        ФорТутти 🍭🍭 в будни раздавали закуски 🍡🍢🥧 Провели спортивную эстафету - забег🏃‍♀️🏃🏻 ко дню рождения нашей спортсменки Оксаны🥳🥳. За каждую дистанцию получали медальки🥇🥇<br>
+                                        Встречайте наш спортивный ФМ!👏🏻💪🏻🔥😍
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/22.jpg" alt="Collage 22" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        ФорТутти 🍭🍭 в будни выполняли комбо-заказы🔥на расслабоне🥱.<br>
+                                        Встречайте наш ФМ по-домашнему в пижамах и пеньюарах.🤩🥳
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/21.jpg" alt="Collage 21" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Милые девочки!<br>
+                                        Поздравляем вас с праздником 8 Марта🌷!!!
+                                        Такой красивый💃🏻, мудрый👩, женственный, сильный слабый пол😃!!! Такие многозадачные🤩,способные одним взглядом передать свои мысли, эмоции и воодушевить им мужчин 😉! ! Любящие, внимательные и заботливые🥰! Будьте счастливы и любимы! И помните, мы Богини!✨️✨️✨️
+                                        С любовью~ ваши ФорТутти🍭🍭
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/20.jpg" alt="Collage 20" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        ФорТутти🍭🍭, нарядившись в одном стиле со своими любимыми питомцами🐰🐯🐱собирали сердечки❤️❤️ довольных посетителей🥰😍<br>
+                                        Встречайте наш ФМ с питомцами🤩🤩🥳
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/19.jpg" alt="Collage 19" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        ФорТутти 🍭🍭 в выходные наливали напитки на любой вкус🥂🍷🍻🧋🥤
+                                        Ангелы 😇😇 боролись с нечистой силой - Демонами 😈👿 и одержали победу👏🏻👼🏻✨
+                                        Встречайте наш ФМ на тему: "Ангелы и Демоны"🌟
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/18.jpg" alt="Collage 18" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        В ФорТутти 🍭🍭 эти выходные прошли с пользой - заработали много денег в ПДР💰💰💰💰💰 Соревновались четыре команды:💙УТРО🌤️, ДЕНЬ 🤍☀️, ❤️ВЕЧЕР🌥️ и 🖤НОЧЬ☄️ В напряжённой борьбе победу одержала команда НОЧЬ🖤💪🏻🥳🤩
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/17.jpg" alt="Collage 17" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Нарядившись в подарочные новогодние свитерки, ФорТутти осчастливили кучу посетителей😍
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/16.jpg" alt="Collage 16" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Продолжаем праздновать Новый 2025 год 🥂🎄
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/15.jpg" alt="Collage 15" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Костюмированная вечеринка – прекрасный повод забыть о сложностях этого года и с уверенностью посмотреть в будущий✨🎉… Звёздочки ФорТутти включили всё своё воображение и сотворили прекрасные наряды👏🏻🤩Снежинка, Санта, пингвинёнок, зайчик, тыковка и много много других интересных образов 🎃❄♥ Представляем Вашему вниманию наши чудесные костюмы!😍🎄💖
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/14.jpg" alt="Collage 14" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Вечеринка - это то, что нужно для полноценного отдыха ✨🎉… Это не просто встреча, это возможность создать яркие воспоминания и зарядиться позитивной энергией!👏🏻🤩<br>
+                                        ФорТутти обожают всё весёлое, только дай повод! 🙊😁💃 Устроили настоящий праздник и оторвались по полной, темболее и повод подходящий был! 🥳Поздравили нашу Вику с днём рождения, были цветы, подарки, танцы и ещё много всего всего 🎁🎊👯‍♀ Представляем фотоотчет!💖😍✨
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/13.jpg" alt="Collage 13" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Свитер с лёгкостью можно считать символом традиционной новогодней одежды 🦌🧶… Это просто забавный способ показать свой праздничный дух 👏🏻🎉
+                                        ФорТутти любят традиции, поэтому не обошлось без ФМ «новогодний свитер»🙌🏻❄️🎄 Представляем Вашему внимаю фото с нашей вечеринки!💁‍♀️😍✨
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/12.jpg" alt="Collage 12" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Даже если вы самый быстрый игрок в гильдии, вы не сможете превзойти целую группу игроков с таким же показателем🤫🙈… Именно по этому совместная работа так важна!👯‍♀️😌
+                                        ФорТутти провели игру «по-командам», объединились по цветам 🌹🏳️🌰🖤 Представляем Вашему внимаю наши шикарные игровые образы!💁‍♀️😍✨
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/11.jpg" alt="Collage 11" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Для одних зима - уют и волшебство, для других - гололёд и мороз. Кто-то вообще не знает, каким бывает это время года❄️🌨️💫…
+                                        ФорТутти провели зимний ФМ, примерили самые тёплые, уютные образы🧣🧦🧸 Посмотрите на нашу «зимнюю сказку»😍☃️👏🏻🎄
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/10.jpg" alt="Collage 10" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Провели увлекательнейший ФМ «Что в сундуке?»<br> Представляем Вам образы, привезенные стилистом специально для каждой звёздочки ФорТутти 👚🧢👠😻👏🏻👏🏻
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/9.jpg" alt="Collage 9" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Северяне говорят, что радуга, которую мы видим, на самом деле - мост между миром людей и миром Богов 🧘‍♀️🔱💫…
+                                        У ФорТутти свое видение этого загадочного явления💁‍♀️ Провели наш излюбленный ФМ, примерили самые любимые образы по цветам радуги🌈 🤩 И готовы представить Вашему вниманию шикарный коллаж на эту тему😻😻
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/8.jpg" alt="Collage 8" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Приходилось ли Вам встречать идеальную пару? Нет? Тогда позвольте представить идеальные пары наших искрометных звёздочек ФорТутти👭💫…<br>
+                                        Провели потрясную игру-соревнование, разделившись на команды по двое👯💞 Каждая команда несла с собой загадочную историю своей жизни, о которых мы рассказали раннее (см. видео "Пары-близнецы" на вкладке "Видео").<br> Наши парные образы для Вас.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/7.jpg" alt="Collage 7" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Мужчину должны украшать три вещи : порядочность, характер и поступки 👨‍🦱Настоящий мужчина - это тот, кому все по плечу!💪 …
+                                        Насич, Виктор, Диман, Рыж, Мариныч и даже Натан🙊 Кто все эти люди?😂ФорТутти решили развлечься, все как мы любим🙊😁, и провести «пацанский» ФМ 🙆‍♂️ Посмотрите, что из этого вышло! Наши «чёткие» образы!😎💁‍♂️
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/6.jpg" alt="Collage 6" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Стихия Воздуха несет в себе активное начало, способное увлекать других🌪️🌫️ Стихия Земли таит в себе способность прочно и основательно удерживать четкую структуру🌳 Комбинация этих стихий сложна, несовместимая энергия, но их конкретная настройка может рассматриваться как дополняющая друг друга🔗🔗 ФорТутти провели игру, противоборство 2х команд, «Воздух» и «Земля»🌬️🌱 Представляем Вашему вниманию потрясающие образы на заданную тему🥰
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/5.jpg" alt="Collage 5" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Самый яркий, смелый, обжигающий цвет - красный!🩸 Многие фен-шуй эксперты рекомендуют использовать этот цвет для привлечения денег и удачи. 🤌 ФорТутти не остались в стороне - провели ФМ в КРАСНОМ🧣👠💄 Страстные, элегантные и супермодные образы представляем Вашему внимаю💁‍♀️💔🌹
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/4.jpg" alt="Collage 4" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        ФМ на тему
+                                        Ведьмы⚡Вампиры<br>
+                                        Грядёт самый зловещий и таинственный Хеллоуин🎃
+                                        У нас всегда всё со смыслом!!! Устроили настоящий шабаш ведьм🧙‍♀️ и слёт неукротимых вампиров🧛‍♀️
+                                        Это была сильнейшая битва в истории⚔️, продолжительностью целых три дня!!! Силы были равны почти всё сражение. Потери были колоссальные с обеих сторон..Ведьмы сжигали вампиров.. Вампиры сьедали ведьм..
+                                        Земля горела от этого побоища!!!🔥🔥🔥
+                                        Но Вампиры так и не смогли одержать победу..как не пытались применять свои всё возможные силы.. Ведьмы-бессмертны!!!!!!
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/3.jpg" alt="Collage 3" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        🍭ФорТутти🍭<br>
+                                        Провели игру «детективы против жуликов»
+                                        Раздавали закуски🍿🍡 Убегали, заметали следы👣 Расследовали преступления 🕵️‍♀️
+                                        Побивали рекорды🔢🏆
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/2.jpg" alt="Collage 2" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Провели ФМ 🤍WHITE PARTY🤍<br>
+                                        👯‍♀️Безудержные танцы, горящие коктейли, неудержимые звездочки Фортутти устроили разрывную вечеринку🔥💣🤩
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <div class="gallery-image-container">
+                                    <img src="kollaji/1.jpg" alt="Collage 1" class="gallery-image">
+                                </div>
+                                <div class="gallery-caption">
+                                    <div class="caption-text">
+                                        Провели игру «сундучок-новичок».👚👗🧢🧤👠👢Зарабатывали, тратили💸💸💸 захватили весь ТЦ🤩 опустошили все полки 🫰остальные покупатели в шоке😯🤑🤑😋 ни осталось НИЧЕГО🙈😁
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Fullscreen viewer -->
+                    <div class="fullscreen-viewer">
+                        <span class="close-viewer">&times;</span>
+                        <div class="nav-arrow prev">&lt;</div>
+                        <div class="fullscreen-image-container">
+                            <img src="" alt="" class="fullscreen-image">
+                        </div>
+                        <div class="nav-arrow next">&gt;</div>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </section>
+    
+    <script src="scriptBody.js"></script>
+    <script src="scriptNavBar.js"></script>
+    <script src="scriptFoto.js"></script>
+    <script src="scriptHappy.js"></script>
+    <script src="scriptNY.js"></script>
+    <script src="script8Marta.js"></script>
+    <script src="scriptFooter.js"></script>
+
+</body>
+</html>

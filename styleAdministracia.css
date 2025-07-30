@@ -1,0 +1,530 @@
+
+
+
+/* Основные стили */
+.admin-section {
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+/* Стили для полноразмерного изображения с кнопкой */
+.full-width-img-container {
+    position: relative;
+    margin: 15px 0;
+    text-align: center; /* Центрируем только фото */
+}
+
+.full-width-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 60px; /* Убрали отступ снизу */
+    display: block; /* Убираем лишние отступы */
+}
+
+.fullscreen-btn {
+    position: absolute;
+    bottom: 15px; /* Фиксируем внизу изображения */
+    right: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 2;
+}
+
+/* Стили для группы фотографий */
+.photo-group {
+    display: flex;
+    margin: 40px 0;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.photo-container {
+    position: relative;
+    width: 400px;
+    height: 650px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.photo-group img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.photo-description {
+    flex: 1;
+    color: white;
+    padding: 0 10px;
+    min-width: 300px;
+}
+
+/* Текстовые стили */
+h1, h2 {
+    color: burlywood;
+    margin: 20px 0 10px;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+p {
+    font-size: 18px;
+}
+
+
+/* Стили для имен с эффектами */
+.victoria-container {
+    position: relative;
+    text-align: left;
+    display: inline-block;
+    padding: 0 5px; /* Добавляем отступы по бокам контейнера */
+    margin-bottom: 15px;
+}
+
+.victoria-3d, .natalek-3d, .nasya-3d, .olchik-3d {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Arial Black', sans-serif;
+    color: white;
+    text-shadow: 
+        3px 3px 0 #d4a017,
+        6px 6px 0 #b8860b,
+        9px 9px 0 #8b6508,
+        0 0 10px rgba(255, 215, 0, 0.7),
+        0 0 20px rgba(255, 255, 0, 0.5);
+    animation: shimmer 2s infinite alternate;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 10px;
+    padding: 0 30px;
+}
+
+.crown {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    animation: float 3s ease-in-out infinite;
+    z-index: 15;
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    color: #ff3366;
+    z-index: 5;
+    animation: beat 0.8s infinite alternate;
+}
+
+.heart.left {
+    left: -10px; /* Увеличиваем расстояние от текста */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.heart.right {
+    right: -10px; /* Увеличиваем расстояние от текста */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.natalek-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.flower {
+    font-size: 24px;
+    animation: 
+        sway 3s infinite alternate ease-in-out,
+        pulse 2s infinite ease-in-out,
+        color-change 4s infinite alternate;
+}
+
+.flower.left {
+    color: #ff66b2;
+}
+
+.flower.right {
+    color: #66b2ff;
+}
+
+.natalek-3d {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #7b54f1;
+    text-shadow: 
+        2px 2px 0 #ffb3d9,
+        4px 4px 0 #d98cb3;
+    position: relative;
+    padding: 0 10px;
+}
+
+.nasya-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.nasya-3d {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a662a;
+    text-shadow: 
+        2px 2px 0 #d6e410,
+        4px 4px 0 #26aa15;
+    position: relative;
+    padding: 0 10px;
+}
+
+.olchik-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.olchik-3d {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a662a;
+    text-shadow: 
+        2px 2px 0 #d6e410,
+        4px 4px 0 #26aa15;
+    position: relative;
+    padding: 0 10px;
+}
+
+.demon-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.wing {
+    font-size: 3rem;
+    animation: flap 1.5s infinite alternate;
+    filter: drop-shadow(0 0 5px #8B0000);
+}
+
+.wing.left {
+    transform: scaleX(-1);
+}
+
+.demon {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #8B0000;
+    text-shadow: 
+        0 0 5px #FF0000,
+        0 0 10px #800000,
+        0 0 20px #500000,
+        0 0 40px #300000;
+    animation: 
+        flicker 0.5s infinite alternate,
+        pulse 2s infinite;
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: auto;
+}
+
+.demon::before {
+    content: "✢";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: #FF4500;
+    animation: spin 5s linear infinite;
+}
+
+.demon::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, #FF0000, transparent);
+    animation: burn 1.5s infinite;
+    width: calc(100% - 20px);
+    left: 10px;
+}
+
+/* Анимации */
+@keyframes shimmer {
+    0% { 
+        opacity: 0.9; 
+        text-shadow: 
+            3px 3px 0 #d4a017, 
+            6px 6px 0 #b8860b, 
+            9px 9px 0 #8b6508, 
+            0 0 10px rgba(255, 215, 0, 0.7), 
+            0 0 20px rgba(255, 255, 0, 0.5); 
+    }
+    100% { 
+        opacity: 1; 
+        text-shadow: 
+            3px 3px 0 #d4a017, 
+            6px 6px 0 #b8860b, 
+            9px 9px 0 #8b6508, 
+            0 0 20px rgba(255, 215, 0, 0.9), 
+            0 0 30px rgba(255, 255, 0, 0.7),
+            0 0 40px rgba(255, 255, 255, 0.5); 
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-15px); }
+}
+
+@keyframes beat {
+    to { transform: translateY(-50%) scale(1.2); }
+}
+
+@keyframes sway {
+    0% { transform: rotate(-8deg) translateY(0); }
+    100% { transform: rotate(8deg) translateY(-5px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes color-change {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 
+            0 0 5px #FF0000,
+            0 0 10px #800000,
+            0 0 20px #500000,
+            0 0 40px #300000;
+    }
+    20%, 24%, 55% {
+        text-shadow: 
+            0 0 10px #FF0000,
+            0 0 20px #800000,
+            0 0 30px #500000,
+            0 0 50px #300000,
+            0 0 70px #100000;
+    }
+}
+
+@keyframes spin {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+@keyframes burn {
+    0% { width: 0; left: 50%; transform: translateX(-50%); }
+    50% { width: calc(100% - 20px); left: 10px; transform: translateX(0); }
+    100% { width: 0; left: 50%; transform: translateX(-50%); }
+}
+
+@keyframes flap {
+    0% { transform: translateY(0) rotate(-10deg); }
+    100% { transform: translateY(-15px) rotate(10deg); }
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Адаптация для мобильных устройств и планшетов */
+@media (max-width: 1200px) {
+    .photo-container {
+        width: 350px;
+        height: 550px;
+    }
+}
+
+@media (max-width: 992px) {
+    .photo-group {
+        justify-content: center;
+    }
+    
+    .photo-container {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin-right: 0;
+    }
+    
+    .photo-description {
+        min-width: 100%;
+        padding: 0;
+    }
+    
+    .fullscreen-btn {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-section {
+        padding: 0 10px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    .full-width-img {
+        max-height: 300px;
+    }
+    
+    .photo-description p {
+        margin: 10px 0;
+        line-height: 1.5;
+    }
+    
+    .victoria-3d, 
+    .natalek-3d, 
+    .nasya-3d, 
+    .olchik-3d,
+    .demon {
+        font-size: 2rem;
+    }
+    
+    .wing {
+        font-size: 2.5rem;
+    }
+    
+    .fullscreen-btn {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 20px;
+    }
+    
+    h2 {
+        font-size: 18px;
+    }
+    
+    .full-width-img {
+        max-height: 200px;
+    }
+    
+    .photo-container {
+        height: auto;
+    }
+    
+    .photo-group img {
+        max-height: 400px;
+    }
+    
+    .victoria-3d, 
+    .natalek-3d, 
+    .nasya-3d, 
+    .olchik-3d,
+    .demon {
+        font-size: 1.8rem;
+        padding: 0 15px;
+    }
+    
+    .wing {
+        font-size: 2rem;
+    }
+    
+    .fullscreen-btn {
+        bottom: 8px;
+        right: 8px;
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .photo-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+    
+    .photo-container {
+        width: 45%;
+        height: 300px;
+        margin: 0 2.5% 15px;
+    }
+    
+    .full-width-img {
+        max-height: 250px;
+    }
+}

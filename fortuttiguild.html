@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>ГИЛЬДИЯ ФорТутти</title>
+    <link rel="stylesheet" href="styleBody.css">
+    <link rel="stylesheet" href="styleNavBar.css">
+    <link rel="stylesheet" href="stylePlayer.css">
+
+    <link rel="stylesheet" href="styleNY.css">
+    <link rel="stylesheet" href="style8Marta.css">
+    <link rel="stylesheet" href="styleHappy.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+       
+
+     <!-- Навигационное меню -->
+    <nav class="navbar-fortutti">
+        <div class="navbar-container">
+            <a class="navbar-brand" href="fortuttiguild.html" id="navLogo">
+                <img src="imglogo/Logotip1.gif" alt="ФорТутти">
+            </a>
+            
+            <!-- Кнопка мобильного меню -->
+            <button class="navbar-toggler" id="navbarToggler">☰</button>
+
+            
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="Administracia.html">Администрация</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="foto.html">Коллажи</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="video.html">Видео</a>
+                </li>
+            </ul>
+
+            <div class="nav-social">
+                <a class="nav-shop" href="https://store.cookingdiary.game/ru-RU/" target="_blank">
+                    <span class="shop-text">Магазин</span>
+                    <span class="game-name">Cooking Diary</span>
+                </a>
+                <a class="nav-link" href="https://vk.com/club227639548?from=groups" target="_blank">
+                    <svg class="vk-icon" viewBox="0 0 24 24">
+                        <path d="M15.073 2H8.938C3.332 2 2 3.333 2 8.927v6.136C2 20.667 3.323 22 8.927 22h6.136C20.667 22 22 20.677 22 15.073V8.938C22 3.332 20.677 2 15.073 2zm3.073 14.27h-1.459c-.552 0-.718-.447-1.708-1.437-.864-.834-1.229-.938-1.448-.938-.302 0-.385.083-.385.5v1.312c0 .354-.115.563-1.042.563-1.52 0-3.291-1.021-4.5-3.01-1.771-2.615-2.166-4.437-2.166-4.583 0-.115.083-.229.25-.229h1.459c.188 0 .26.083.323.281.656 2.177 2.104 4.083 2.635 4.083.188 0 .271-.083.271-.552v-2.146c-.063-.98-.583-1.063-.583-1.417 0-.125.104-.229.229-.229h2.292c.188 0 .271.083.271.302v3.229c0 .333.135.417.229.417.188 0 .333-.104.677-.448 1.083-1.25 1.771-3.166 1.771-3.166.104-.208.187-.291.437-.291h1.459c.146 0 .229.083.187.27-.24.76-2.5 3.708-2.5 3.708-.188.25-.271.406 0 .76.135.208.583.604 1 1.01.687.688 1.229 1.229 1.354 1.604.125.406.083.604-.333.604z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Баннер 8 марта -->
+    <div id="marchBanner" class="march-banner">
+        <div class="march-message">С 8 марта, дорогие девушки ги ФорТутти!</div>
+    </div>
+
+    <!-- Баннер дня рождения -->
+    <div id="birthdayBanner" class="birthday-banner">
+        <div class="birthday-message">С Днём рождения, самая лучшая гильдия ФорТутти!</div>
+    </div>
+    
+
+
+    <!-- Новогодний баннер с поздравлением Ги 01.01 каждый год -->
+    <!-- Контейнер для баннера -->
+    <div class="new-year-banner-container">
+        <!-- Новогодний баннер с поздравлением Ги 01.01 каждый год -->
+        <div class="new-year-banner" id="newYearBanner">
+            <div class="banner-text-ny">С Новым Годом дорогие сектанты ги ФорТутти!!!</div>
+            <canvas id="fireworksCanvas"></canvas>
+        </div>
+    </div>
+
+
+    <section class="content-wrap">   
+        <div class="container  youplay-content">
+            <div class="row">
+                <main class="col-xs-12 p-0">
+                
+                    <div class="container">
+
+                        <h1 style="text-align: center; color: burlywood">ГИЛЬДИЯ «ФОРТУТТИ»</h1>
+            
+                        <div class="content-block"> 
+                            <div>
+                                <img src="img/0-1.jpg" alt="Гильдия ФОРТУТТИ">
+                            </div>
+                            <div>
+                                <p>Гильдия ФорТутти ищет активных, общительных и ответственных ребят и девчат!</p>
+                                <p>Эй, кулинары-виртуозы и покорители ресторанных горизонтов! Готовы ворваться в мир Cooking Diary не просто так, а с оркестром? Гильдия ФорТутти распахивает свои двери для самых амбициозных, креативных и просто обожающих готовить игроков!</p> 
+                                <p>Мечтаете о команде единомышленников, способных поддержать в трудную минуту и разделить радость побед? Тогда бросайте свои сковородки и бегите скорее в гильдию ФорТутти!</p>                      
+
+                            </div>
+                        </div>
+
+                        <div class="requirements">
+                            <div class="textgi">
+                                <h2 style="color: burlywood">О НАШЕЙ ГИЛЬДИИ</h2>
+                                <p>Что вас ждет в ФорТутти? Море позитива, океан общения и, конечно же, горы вкуснейших блюд! Мы регулярно устраиваем флешмобы, захватывающие игры и безумные конкурсы (угадайки) и др., чтобы ваша игра стала еще ярче и интереснее.</p>
+                                <p>Но самое главное – это, конечно же, наша дружная команда! Мы поддерживаем друг друга, делимся секретами мастерства и просто весело проводим время вместе. Мы – не просто гильдия, мы – семья, где каждый найдет свое место! Мы верим, что вместе мы – сила, способная перевернуть мир Cooking Diary!</p>
+                                <p>Годы летят быстрее, чем жарятся пирожки, а ФорТутти процветает, становится всё краше и аппетитнее!. Гильдия стала не просто сообществом игроков, а настоящим домом для многих. Вечерние посиделки в чате, обсуждение новых уровней и рецептов, взаимопомощь в прохождении сложных заданий - все это сблизило людей, живущих в самых разных уголках нашей необъятной страны!</p>
+                                <p>И пусть cooking diary - всего лишь игра, но для многих членов ФорТутти это нечто большее - это место, где всегда найдётся ложка поддержки, горсть дружбы и целая тарелка отличного настроения!</p>
+                                <p>Так чего же вы ждете? Хватайте свои поварские колпаки и присоединяйтесь к нам! Вместе мы превратим Cooking Diary в настоящий кулинарный рай! Не упустите свой шанс стать частью нашей команды! Вступайте в ФорТутти – и пусть ваши блюда будут самыми вкусными, а победы – самыми сладкими!</p> 
+                                <p style="text-align: center; font-weight: bold; margin-top: 20px;"><span style="background-color: rgb(219, 148, 81); color: white; padding: 3px 8px; border-radius: 4px;  font-weight: bold;">Готовы к приключениям? Тогда добро пожаловать в нашу самую лучшую и "безумную" семейку!</span></p>
+                            </div>
+                        </div>
+                        <div class="requirements-1">
+                            <h2 style="color: burlywood">ПРАВИЛА НАШЕЙ ГИЛЬДИИ</h2>
+                            <div class="textgi">
+                                <p>Только активные игроки! Зашел — сразу пиши в чат, любим общительных. Минимум 60 ур./день. Выполнение всех событий с очками G — обязательно! В КТ стремиться занять 1 место, 2-е и 3-е места тоже приветствуются! Доставка по желанию, но если начал, то минимум от 20. Об отсутсвии в игре по каким-либо причинам в дни заданий — предупреждать заранее.</p>
+                            </div>
+                        </div>
+                        <div class="requirements-2">
+                            <h2 style="color: burlywood">ГИМН ГИЛЬДИИ ФОРТУТТИ</h2>
+                            <div class="audio-player" id="player">
+                                <div class="album-art"><img src="img/audio/12.jpg" style="width: 50px; border-radius: 8px;"></div>
+                                <div class="progress-container">
+                                    <div class="progress-bar" id="progress-bar">
+                                        <div class="progress" id="progress"></div>
+                                    </div>
+                                    <span class="time" id="current-time">0:00</span>
+                                </div>
+                                <div class="controls">
+                                    <button class="control-btn play-btn" id="play-btn">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="play-icon">
+                                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                        </svg>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="pause-icon" style="display: none;">
+                                            <rect x="6" y="4" width="4" height="16"></rect>
+                                            <rect x="14" y="4" width="4" height="16"></rect>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="volume-container">
+                                    <button class="control-btn" id="volume-btn">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                        </svg>
+                                    </button>
+                                    <div class="volume-bar" id="volume-bar">
+                                        <div class="volume-progress" id="volume-progress"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <audio id="audio" src="audio/Гимн ги_5_ (ИТОГ_2).mp3"></audio>
+                        </div>
+                        <div>
+                            <h3>Заметка из дневника Demona</3><hr>
+                        </div>
+                        <div class="content-block-stih">
+                            <div class="col-1">
+                                <p>Однажды в студеную зимнюю пору,<br>
+                                Закинуло в гильдию как-то судьбою,<br>
+                                Знакомых в ней не было, я — новичок,<br>
+                                И был словно волк я тогда одинок…</p>
+                                <p>Смущался сначала, как будто чужой,<br>
+                                Но вскоре почувствовал мир и покой. <br>
+                                И лед одиночества сразу растаял,<br>
+                                Наполнилась жизнь ярким светом награды.</p>
+                                <p>Не ведал про рейды, про КТ бои,<br>    		
+                                Но постепенно меня обучили,<br>
+                                Познал все секреты, как надо играть.<br>
+                                И путь свой решил я тогда продолжать.</p>
+                                <p>Флешмобы и игры – все ново для глаз,<br>
+                                Начать было сложно — я не одет,<br>
+                                В этих забавах участвовать - желания нет,<br>
+                                Но вот постепенно стал шмот появляться.</p>
+                                <p>Оделся, прошарил, теперь я в строю,<br>
+                                И сложностей больше я не познаю.<br>
+                                Трындел я там что-то, народ собирал,<br>
+                                Как действовать верно, слегка помогал.</p>
+                                <p>Мы вместе творили, учились, мечтали,<br>
+                                Познали и радость, и горечь утраты.<br>
+                                И гильдия стала семьей настоящей,<br>
+                                Где каждый готов поддержать, если надо.</p>
+                            </div>
+                            <div class="col-2">
+                                <p>Знакомиться начал, почаще    играть,<br>
+                                Порою не знал что уже и сказать,<br>
+                                Так постепенно со всеми общался,<br>
+                                Ничем тогда я не выделялся…</p>
+                                <p>Общение, игры, все чаще, смелей,<br>
+                                Нашел я друзей среди этих людей.<br>
+                                Так с каждым сближался, себя проявлял,<br>
+                                Особым талантом я не блистал.</p>
+                                <p>В турнирах ФорТутти кипят наши страсти,<br>
+                                Победа зовет, словно солнечный зайчик.<br>
+                                Пусть сложно бывает, пусть нервы шалят,<br>
+                                Но вера в победу – наш двигатель, вот так!</p>
+                                <p>Людей было много, огромная Ги,<br>
+                                Но время сносило наши ряды,<br>
+                                Ведь *нехороших* тоже хватало,<br>
+                                Порядка и чести в них было мало…</p>
+                                <p>Остались лишь добрые люди внутри,<br>
+                                О них и продолжу рассказ свой вести,<br>
+                                Прекрасный состав, что собрался у нас,<br>
+                                Его перечислю специально для Вас…</p>
+                                <p>Наталёк – Админ наш, всегда на посту,<br>
+                                Поможет, подскажет, развеет тоску.<br>
+                                Про Ги всё расскажет, в курс дела введет,<br>
+                                В проблеме любой тебя верно поймет.</p>
+                            </div>
+                            <div class="col-3">
+                                <p>Помимо Админа, есть старички,<br>
+                                Гордость, опора и честь нашей Ги,<br>
+                                Попробую также и их перечесть.<br>
+                                Ведь этот составчик сложился годами,<br>
+                                Ребята друг другу во всём помогали…</p>
+                                <p>Вика, Demon, Нась, Ольчик, Оксана,<br>
+                                Маринчик, Верон, Лёля, Николавна,<br>
+                                Агния, Эльза, Рыжик, Анюта,<br>
+                                Sia, ОЛО, Ленчик, Диманя и Zlata,<br>
+                                Вот и вся гильдия - славная наша…</p>
+                                <p>И пусть за окном холода и снега,<br>
+                                В гильдии тепло, и царит там игра.<br>
+                                Поддержат, помогут, научат всегда,<br>
+                                ФорТутти – семья, что мне дорога!</p>
+                                <p>Так гильдия стала мне домом вторым,<br>
+                                Где знанья черпал и рос я большим,<br>
+                                И в зимнюю стужу, средь шумных бесед,<br>
+                                Нашел я друзей и оставил свой след.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <footer>
+                    <hr>
+                    <h5 style="color: white;">© 2025 ФорТутти</h5>
+                    </footer>
+                </main>
+            </div>
+        </div>
+    </section>
+        <script src="scriptBody.js"></script>
+        <script src="scriptNavBar.js"></script>
+        <script src="scriptPlayer.js"></script>
+
+        <script src="scriptNY.js"></script>
+        <script src="script8Marta.js"></script>
+        <script src="scriptHappy.js"></script>
+        <script src="scriptFooter.js"></script>
+        
+</body>
+</html>
+
+
+
+
+
+
+

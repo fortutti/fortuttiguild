@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Просмотр видео | ФорТутти</title>
+    <link rel="stylesheet" href="styleNavBar.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .video-player-container {
+            max-width: 100%;
+            margin: 70px auto;
+            padding: 15px;
+            background: rgba(10, 10, 10, 0.8);
+            border-radius: 8px;
+            box-sizing: border-box;
+            width: 95%;
+        }
+
+        .video-player-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+        }
+
+        .vk-player-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-title {
+            font-size: 24px;
+            margin: 20px 0 10px;
+            color: #ff8c00;
+        }
+        
+        .video-description {
+            color: #ddd;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #aaa;
+            font-size: 14px;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        
+        .player-back-button {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 100;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            opacity: 1; /* Важно: делаем видимой по умолчанию */
+        }
+
+        .player-back-button:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: scale(1.1);
+        }
+
+        /* Для мобильных */
+        @media (max-width: 768px) {
+            .player-back-button {
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+            }
+        }
+
+        /* Элементы управления для touch */
+        .touch-controls {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            z-index: 10;
+            touch-action: none;
+        }
+        
+        .touch-left, .touch-right {
+            flex: 1;
+            height: 100%;
+        }
+        
+        .touch-center {
+            width: 40%;
+            height: 100%;
+        }
+        
+        /* Анимация касания */
+        .touch-feedback {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 20;
+        }
+        
+        @keyframes touchAnimation {
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .video-player-container {
+                margin: 60px auto 20px;
+                padding: 10px;
+            }
+            
+            .video-title {
+                font-size: 20px;
+            }
+        }
+
+        @media (orientation: landscape) {
+            .video-player-wrapper {
+                padding-bottom: 0;
+                height: calc(100vh - 20px);
+            }
+            
+            .video-title,
+            .video-description,
+            .video-meta,
+            .back-button {
+                display: none;
+            }
+        }
+    </style>
+    <!-- VK Widgets SDK -->
+    <script src="https://vk.com/js/api/openapi.js?169"></script>
+</head>
+<body>
+    <!-- Навигационное меню -->
+    <nav class="navbar-fortutti">
+        <div class="navbar-container">
+            <a class="navbar-brand" href="fortuttiguild.html" id="navLogo">
+                <img src="img/Logotip1.gif" alt="ФорТутти">
+            </a>
+            
+            <button class="navbar-toggler" id="navbarToggler">☰</button>
+
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item">
+                    <a class="nav-link" href="Administracia.html">Администрация</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="foto.html">Коллажи</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="video.html">Видео</a>
+                </li>
+            </ul>
+
+            <div class="nav-social">
+                <a class="nav-shop" href="https://store.cookingdiary.game/ru-RU/" target="_blank">
+                    <span class="shop-text">Магазин</span>
+                    <span class="game-name">Cooking Diary</span>
+                </a>
+                <a class="nav-link" href="https://vk.com/club227639548?from=groups" target="_blank">
+                    <svg class="vk-icon" viewBox="0 0 24 24">
+                        <path d="M15.073 2H8.938C3.332 2 2 3.333 2 8.927v6.136C2 20.667 3.323 22 8.927 22h6.136C20.667 22 22 20.677 22 15.073V8.938C22 3.332 20.677 2 15.073 2zm3.073 14.27h-1.459c-.552 0-.718-.447-1.708-1.437-.864-.834-1.229-.938-1.448-.938-.302 0-.385.083-.385.5v1.312c0 .354-.115.563-1.042.563-1.52 0-3.291-1.021-4.5-3.01-1.771-2.615-2.166-4.437-2.166-4.583 0-.115.083-.229.25-.229h1.459c.188 0 .26.083.323.281.656 2.177 2.104 4.083 2.635 4.083.188 0 .271-.083.271-.552v-2.146c-.063-.98-.583-1.063-.583-1.417 0-.125.104-.229.229-.229h2.292c.188 0 .271.083.271.302v3.229c0 .333.135.417.229.417.188 0 .333-.104.677-.448 1.083-1.25 1.771-3.166 1.771-3.166.104-.208.187-.291.437-.291h1.459c.146 0 .229.083.187.27-.24.76-2.5 3.708-2.5 3.708-.188.25-.271.406 0 .76.135.208.583.604 1 1.01.687.688 1.229 1.229 1.354 1.604.125.406.083.604-.333.604z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <div class="video-player-container">
+        <div class="video-player-wrapper">
+            <button class="player-back-button" id="playerBackButton" title="Вернуться">←</button>
+            <div class="vk-player-container" id="vkPlayer"></div>
+        </div>
+
+        <h1 class="video-title" id="videoTitle">Загрузка...</h1>
+        <div class="video-description" id="videoDescription"></div>
+        
+        <div class="video-meta">
+            <span id="videoDate">Дата: </span>
+            <span id="videoViews">Просмотров: </span>
+        </div>
+
+        <a href="video.html" class="back-button" id="backButton">← Вернуться к списку видео</a>
+    </div>
+
+
+    <script src="scriptNavBar.js"></script>
+    <script src="scriptFooter.js"></script>
+        
+    <script>
+
+  
+    // Добавляем в начало скрипта
+    function getVKVideoUrl(videoId) {
+        const GROUP_ID = "-227639548";
+        return `https://vk.com/video_ext.php?oid=${GROUP_ID}&id=${videoId}`;
+    }
+
+    // Получаем параметры из URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const videoId = urlParams.get('id');
+    const autoplay = urlParams.get('autoplay') === '1';
+
+    // База данных видео (ID соответствуют видео в VK)
+    const videoDatabase = {
+        '12': {
+            title: 'Дорогие сектанты ги ФорТутти! С Новым Годом вас!🎉 🎅 🎄',
+            description: 'Воспоминания о том, как мы провели ушедший 2024 год',
+            date: '01.01.2025',
+            vkId: '456239066'
+        },
+        '11': {
+            title: 'Новый год',
+            description: 'Весело отмечаем Новый 2025 год',
+            date: '01.01.2025',
+            vkId: '456239068'
+        },
+        '10': {
+            title: 'ДР Вики',
+            description: 'Сегодня в ги ФорТутти отмечает свой День Рождения наша дорогая и любимая Викусечка!💖 Этот радостный день наполняет сердце теплом и светом, словно яркие огоньки на праздничном торте. Викуля, ты — настоящая звезда⭐ нашей команды, свет которой притягивает к себе заботу и дружбу.',
+            date: '19.12.2024',
+            vkId: '456239061'
+        },
+        '9': {
+            title: 'Пары-близнецы',
+            description: 'В рамках необычного флешмоба члены гильдии ФорТутти решили раскрыть загадки судеб своих близнецов. Каждая пара, соединенная невидимой нитью, поделилась своими историями с открытым финалом, полными одновременно радости, приключений и неизвестности',
+            date: '25.11.2024',
+            vkId: '456239048'
+        },
+        '8': {
+            title: 'Вика, Нась и Наталек',
+            description: 'Познакомьтесь с гордостью нашей гильдии ФорТутти — Вика, Нась и Наталек. Эти замечательные участницы являются сердцем нашего сообщества и делают нашу команду поистине неповторимой. Вместе они формируют мощный коллектив, стремящийся к общей цели и объединяющий нас в одно целое.',
+            date: '13.11.2024',
+            vkId: '456239047'
+        },
+        '7': {
+            title: 'Хэллоуин',
+            description: 'ФорТутти отмечает праздник Хэллоуин с особым размахом, преобразуя свои уютные залы в волшебные, пугающие пространства, полные таинственных теней и мистических огней.',
+            date: '31.10.2024',
+            vkId: '456239037'
+        },
+        '6': {
+            title: 'ДР Димани',
+            description: 'Вечеринка на дне рождении Димани',
+            date: '12.10.2024',
+            vkId: '456239027'
+        },
+        '5': {
+            title: 'Межсезонье🧘',
+            description: 'Межсезонье🧘, самое время немножко расслабиться🍹🎉🍾 ТАНЦУЮТ ВСЕ !!💃👯🕺😂За юмор, как всегда, отвечает Demon 😎',
+            date: '09.10.2024',
+            vkId: '456239022'
+        },
+        '4': {
+            title: 'Выжившие',
+            description: 'В этот раз мы решили рвануть в мини отпуск и потусить всей гильдией на Бали! Но вдруг случилось ужасное...',
+            date: '18.09.2024',
+            vkId: '456239034'
+        },
+        '3': {
+            title: 'Для рекламы ги',
+            description: 'Рекламный видеоролик нашей ги',
+            date: '04.07.2024',
+            vkId: '456239018'
+        },
+        '2': {
+            title: 'Для рекламы ги',
+            description: 'Рекламное видео нашей ги',
+            date: '02.07.2024',
+            vkId: '456239019'
+        },
+        '1': {
+            title: 'ФорТутти на Гавайях',
+            description: 'Провели незабываемых отдых на Гавайях',
+            date: '01.06.2024',
+            vkId: '456239017'
+        }
+    };
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const videoData = videoDatabase[videoId];
+        const backButton = document.getElementById('playerBackButton');
+        
+        // Показываем кнопку всегда
+        backButton.style.display = 'flex';
+        backButton.style.opacity = '1';
+
+        // Обработчик для кнопки "Назад"
+        backButton.addEventListener('click', function() {
+            sessionStorage.setItem('videoNavigation', JSON.stringify({
+                id: videoId,
+                source: 'player'
+            }));
+            window.location.href = "video.html";
+        });
+
+        if (videoData && videoData.vkId) {
+            // Устанавливаем информацию о видео
+            document.getElementById('videoTitle').textContent = videoData.title;
+            document.getElementById('videoDescription').textContent = videoData.description;
+            document.getElementById('videoDate').textContent = `Дата: ${videoData.date}`;
+            
+            // Инициализация VK плеера
+            const playerContainer = document.getElementById('vkPlayer');
+            playerContainer.innerHTML = `
+                <iframe src="${getVKVideoUrl(videoData.vkId)}&autoplay=${autoplay ? 1 : 0}" 
+                        width="100%" 
+                        height="100%" 
+                        frameborder="0" 
+                        allowfullscreen 
+                        allow="autoplay; encrypted-media; fullscreen; picture-in-picture">
+                </iframe>
+            `;
+            
+            // Обновляем количество просмотров после загрузки плеера
+            setTimeout(() => {
+                const views = Math.floor(Math.random() * 500) + 100;
+                document.getElementById('videoViews').textContent = `Просмотров: ${views}`;
+            }, 2000);
+        } else {
+            document.getElementById('vkPlayer').innerHTML = `
+                <div style="color: white; text-align: center; padding: 50px;">
+                    <h3>Видео не найдено</h3>
+                    <p>Запрошенное видео не существует или было удалено.</p>
+                </div>
+            `;
+        }
+
+        // Активируем ссылку "Видео" в навигации
+        document.querySelector('.nav-link[href="video.html"]').classList.add('active');
+    });
+
+    // Обработчик изменения ориентации
+    function handleOrientationChange() {
+        const wrapper = document.querySelector('.video-player-wrapper');
+        if (window.matchMedia("(orientation: landscape)").matches) {
+            wrapper.style.paddingBottom = '0';
+            wrapper.style.height = 'calc(100vh - 20px)';
+        } else {
+            wrapper.style.paddingBottom = '56.25%';
+            wrapper.style.height = '';
+        }
+    }
+
+    window.addEventListener('orientationchange', handleOrientationChange);
+    window.addEventListener('resize', handleOrientationChange);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+:root {
+            --primary-color: #333;
+            --secondary-color: #444;
+            --accent-color: #ff6600;
+            --text-color: #333;
+            --light-text: #fff;
+            --bg-color: #f4f4f9;
+            --section-bg: rgba(255, 255, 255, 0.85);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            touch-action: manipulation;
+        }
+        
+        body {
+            font-size: 14px;
+            letter-spacing: 0.06em;
+            line-height: 20px;
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            word-wrap: break-word;
+        }
+        
+        /* 2. Адаптация для мобильных устройств и планшетов */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 10px;
+            
+        }
+        
+        .content-wrap {
+            background: rgba(10, 10, 10, 0.75);
+            max-width: 1300px;
+            padding: 20px;
+            margin: 60px auto 0;
+            overflow: hidden;
+            transition: padding-top 0.3s ease;
+        }
+
+        
+        h1 {
+            font-size: 50px;
+            line-height: 55px;
+            margin-left: 20px;
+            font-family: Trebuchet MS, sans-serif;
+            color: burlywood;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            position: relative;
+            color: burlywood;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: burlywood;
+            font-style: italic;
+            margin-top: 40px;
+        }
+        
+        p {
+            margin: 0 0 15px;
+            color: white;
+        }
+        
+        .content-block, .content-block-stih {
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+        
+        .content-block > div, .content-block-stih > div {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            font-size: 18px;
+        }
+        
+        .content-block img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .content-block img:hover {
+            transform: scale(1.02);
+        }
+        
+        .textgi {
+            font-size: 18px;
+        }
+        
+        .requirements, .requirements-1, .requirements-2 {
+            padding: 20px 0;
+            margin-top: 10px;
+        }
+        
+        footer {
+            text-align: left;
+            margin: 10px 0 30px;
+        }
+        
+        /* 3. Масштабирование двумя пальцами для мобильных */
+        @media (hover: none) and (pointer: coarse) {
+            html {
+                touch-action: pinch-zoom;
+            }
+            
+            body {
+                touch-action: pan-x pan-y pinch-zoom;
+            }
+        }
+        
+        /* Адаптивные стили */
+        @media (max-width: 1200px) {
+            .content-wrap {
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+            
+            .content-wrap {
+                margin-top: 40px;
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+                margin-left: 0;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+                margin-top: 30px;
+            }
+            
+            .content-block > div, .content-block-stih > div {
+                padding: 15px 10px;
+                min-width: 100%;
+            }
+            
+            .textgi {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+            
+            .content-block, .content-block-stih {
+                margin-bottom: 50px;
+            }
+            
+            .requirements, .requirements-1, .requirements-2 {
+                padding: 15px 0;
+                margin-top: 20px;
+            }
+        }

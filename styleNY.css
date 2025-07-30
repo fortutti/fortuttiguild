@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+
+/* Новогодний баннер с поздравлением */
+.new-year-banner-container {
+    position: relative;
+    width: 100%;
+    height: 0; /* Начальная высота 0 */
+}
+
+.new-year-banner {
+    position: fixed;
+    top: 60px; /* Высота навигационного меню */
+    left: 0;
+    width: 100%;
+    height: auto; /* Автоматическая высота для адаптивности */
+    min-height: 120px; /* Минимальная высота */
+    background: linear-gradient(135deg, #0a0a2a 0%, #1a1a4a 100%);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 10px 0; /* Добавляем отступы для текста */
+}
+
+.banner-text-ny {
+    font-family: 'Marck Script', cursive;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff00de, 0 0 30px #ff00de;
+    animation: glow 2s ease-in-out infinite alternate;
+    position: relative;
+    z-index: 10;
+    text-align: center; /* Центрируем текст */
+    padding: 0 20px; /* Отступы по бокам */
+    white-space: normal; /* Разрешаем перенос текста */
+    word-break: break-word; /* Перенос слов при необходимости */
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 1024px) {
+    .banner-text-ny {
+        font-size: 2rem; /* Уменьшаем шрифт */
+    }
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 767px) {
+    .banner-text-ny {
+        font-size: 1.5rem; /* Ещё меньше шрифт */
+        white-space: normal; /* Обязательно разрешаем перенос */
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #ff00de, 0 0 15px #ff00de;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 40px #ff00de;
+    }
+}
+
+.snowflake {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Стиль для контейнера, когда баннер показан */
+.banner-container-visible {
+    height: auto; /* Автоматическая высота */
+    min-height: 120px; /* Минимальная высота */
+}

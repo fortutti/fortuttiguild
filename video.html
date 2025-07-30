@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>ВИДЕО ГИЛЬДИИ «ФОРТУТТИ»</title>
+    <link rel="stylesheet" href="styleBody.css">
+    <link rel="stylesheet" href="styleNavBar.css">
+    <link rel="stylesheet" href="styleVideo.css">
+    
+    <link rel="stylesheet" href="styleHappy.css">
+    <link rel="stylesheet" href="styleNY.css">
+    <link rel="stylesheet" href="style8Marta.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Добавляем VK Widgets SDK -->
+    <script src="https://vk.com/js/api/openapi.js?169" type="text/javascript"></script>
+
+</head>
+
+<body>
+       
+    <!-- Навигационное меню -->
+    <nav class="navbar-fortutti">
+        <div class="navbar-container">
+            <a class="navbar-brand" href="fortuttiguild.html" id="navLogo">
+                <img src="imglogo/Logotip1.gif" alt="ФорТутти">
+            </a>
+            
+            <!-- Кнопка мобильного меню -->
+            <button class="navbar-toggler" id="navbarToggler">☰</button>
+
+            
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="Administracia.html">Администрация</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="foto.html">Коллажи</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="video.html">Видео</a>
+                </li>
+            </ul>
+
+            <div class="nav-social">
+                <a class="nav-shop" href="https://store.cookingdiary.game/ru-RU/" target="_blank">
+                    <span class="shop-text">Магазин</span>
+                    <span class="game-name">Cooking Diary</span>
+                </a>
+                <a class="nav-link" href="https://vk.com/club227639548?from=groups" target="_blank">
+                    <svg class="vk-icon" viewBox="0 0 24 24">
+                        <path d="M15.073 2H8.938C3.332 2 2 3.333 2 8.927v6.136C2 20.667 3.323 22 8.927 22h6.136C20.667 22 22 20.677 22 15.073V8.938C22 3.332 20.677 2 15.073 2zm3.073 14.27h-1.459c-.552 0-.718-.447-1.708-1.437-.864-.834-1.229-.938-1.448-.938-.302 0-.385.083-.385.5v1.312c0 .354-.115.563-1.042.563-1.52 0-3.291-1.021-4.5-3.01-1.771-2.615-2.166-4.437-2.166-4.583 0-.115.083-.229.25-.229h1.459c.188 0 .26.083.323.281.656 2.177 2.104 4.083 2.635 4.083.188 0 .271-.083.271-.552v-2.146c-.063-.98-.583-1.063-.583-1.417 0-.125.104-.229.229-.229h2.292c.188 0 .271.083.271.302v3.229c0 .333.135.417.229.417.188 0 .333-.104.677-.448 1.083-1.25 1.771-3.166 1.771-3.166.104-.208.187-.291.437-.291h1.459c.146 0 .229.083.187.27-.24.76-2.5 3.708-2.5 3.708-.188.25-.271.406 0 .76.135.208.583.604 1 1.01.687.688 1.229 1.229 1.354 1.604.125.406.083.604-.333.604z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Баннер 8 марта -->
+    <div id="marchBanner" class="march-banner">
+        <div class="march-message">С 8 марта, дорогие девушки ги ФорТутти!</div>
+    </div>
+
+    <!-- Баннер дня рождения -->
+    <div id="birthdayBanner" class="birthday-banner">
+        <div class="birthday-message">С Днём рождения, самая лучшая гильдия ФорТутти!</div>
+    </div>
+
+
+    <!-- Новогодний баннер с поздравлением Ги 01.01 каждый год -->
+    <!-- Контейнер для баннера -->
+    <div class="new-year-banner-container">
+        <!-- Новогодний баннер с поздравлением Ги 01.01 каждый год -->
+        <div class="new-year-banner" id="newYearBanner">
+            <div class="banner-text-ny">С Новым Годом дорогие сектанты ги ФорТутти!!!</div>
+            <canvas id="fireworksCanvas"></canvas>
+        </div>
+    </div>
+
+    <!-- Контейнер для полноэкранного просмотра видео -->
+    <div class="video-fullscreen">
+        <div class="fullscreen-container"></div>
+        <button class="close-fullscreen">×</button>
+    </div>
+
+    <section class="content-wrap">   
+        <div class="container youplay-content">
+            <div class="row">
+                <main class="col-xs-12 p-0">
+                    <div class="container">
+                        <h1 style="text-align: center;">ВИДЕО ГИЛЬДИИ «ФОРТУТТИ»</h1>
+                        
+                        <!-- Галерея видео -->
+                        <div class="video-gallery">
+                            <!-- Пример видео элемента с ID видео из VK -->
+                            <div class="video-item">
+                                <a href="player.html?id=456239066" class="video-link" data-video-id="456239066">
+                                    <div class="video-thumbnail">
+                                        <img src="img/12.jpg" alt="Видео 12">
+                                        <div class="video-play-icon"></div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Дорогие сектанты ги ФорТутти! С Новым Годом вас!🎉 🎅 🎄</h3>
+                                        <p>Воспоминания о том, как мы провели ушедший 2024 год</p>
+                                        <div class="video-date">01.01.2025</div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <!-- Остальные видео элементы аналогично -->
+                            <div class="video-item">
+                                <a href="player.html?id=456239068" class="video-link" data-video-id="456239068">
+                                    <div class="video-thumbnail">
+                                        <img src="img/11.jpg" alt="Видео 11">
+                                        <div class="video-play-icon"></div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Новый год</h3>
+                                        <p>Весело отмечаем Новый 2025 год</p>
+                                        <div class="video-date">01.01.2025</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="video-item">
+                                <a href="player.html?id=456239061" class="video-link" data-video-id="456239061">
+                                    <div class="video-thumbnail">
+                                        <img src="img10/10.gif" alt="Видео 10">
+                                        <div class="video-play-icon"></div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">ДР Вики</h3>
+                                        <p>Сегодня в ги ФорТутти отмечает свой День Рождения наша дорогая и любимая Викусечка!💖 Этот радостный день наполняет сердце теплом и светом, словно яркие огоньки на праздничном торте. Викуля, ты — настоящая звезда⭐ нашей команды, свет которой притягивает к себе заботу и дружбу.</p>
+                                        <div class="video-date">19.12.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="video-item">
+                                <a href="player.html?id=456239048" class="video-link" data-video-id="456239048">
+                                    <div class="video-thumbnail">
+                                        <img src="img/9.jpg" alt="Видео 9">
+                                        <div class="video-play-icon"></div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Пары-близнецы</h3>
+                                        <p>В рамках необычного флешмоба члены гильдии ФорТутти решили раскрыть загадки судеб своих близнецов. Каждая пара, соединенная невидимой нитью, поделилась своими историями с открытым финалом, полными одновременно радости, приключений и неизвестности</p>
+                                        <div class="video-date">25.11.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="video-item">
+                                <a href="player.html?id=456239047" class="video-link" data-video-id="456239047">
+                                    <div class="video-thumbnail">
+                                        <img src="img8/8.gif" alt="Видео 8">
+                                        <div class="video-play-icon"></div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Вика, Нась и Наталек</h3>
+                                        <p>Познакомьтесь с гордостью нашей гильдии ФорТутти — Вика, Нась и Наталек. Эти замечательные участницы являются сердцем нашего сообщества и делают нашу команду поистине неповторимой. Вместе они формируют мощный коллектив, стремящийся к общей цели и объединяющий нас в одно целое.</p>
+                                        <div class="video-date">13.11.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="video-item">
+                                <a href="player.html?id=456239037" class="video-link" data-video-id="456239037">
+                                    <div class="video-thumbnail">
+                                        <img src="img/7.jpg" alt="Видео 7">
+                                        <div class="video-play-icon"></div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Хэллоуин</h3>
+                                        <p>ФорТутти отмечает праздник Хэллоуин с особым размахом, преобразуя свои уютные залы в волшебные, пугающие пространства, полные таинственных теней и мистических огней.</p>
+                                        <div class="video-date">31.10.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="video-item">
+                                <a href="player.html?id=456239027" class="video-link" data-video-id="456239027">
+                                    <div class="video-thumbnail">
+                                        <img src="img6/6.gif" alt="Видео 6">
+                                        <div class="video-play-icon"></div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">ДР Димани</h3>
+                                        <p>Вечеринка на дне рождении Димани</p>
+                                        <div class="video-date">12.10.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="video-item">
+                                <a href="player.html?id=456239022" class="video-link" data-video-id="456239022">
+                                    <div class="video-thumbnail">
+                                        <img src="img/5.jpg" alt="Видео 5">
+                                        <div class="video-play-icon"></div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Межсезонье🧘</h3>
+                                        <p>Межсезонье🧘, самое время немножко расслабиться🍹🎉🍾 ТАНЦУЮТ ВСЕ !!💃👯🕺🪩😂За юмор, как всегда, отвечает Demon 😎</p>
+                                        <div class="video-date">09.10.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="video-item">
+                                <a href="player.html?id=456239034" class="video-link" data-video-id="456239034">
+                                    <div class="video-thumbnail">
+                                        <img src="img4/4.gif" alt="Видео 4">
+                                        <div class="video-play-icon"></div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Выжившие</h3>
+                                        <p>В этот раз мы решили рвануть в мини отпуск и потусить всей гильдией на Бали! Но вдруг случилось ужасное...</p>
+                                        <div class="video-date">18.09.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="video-item">
+                                <a href="player.html?id=456239018" class="video-link" data-video-id="456239018">
+                                    <div class="video-thumbnail">
+                                        <img src="img/3.jpg" alt="Видео 3">
+                                        <div class="video-play-icon"></div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Для рекламы ги</h3>
+                                        <p>Рекламный видеоролик нашей ги</p>
+                                        <div class="video-date">04.07.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="video-item">
+                                <a href="player.html?id=456239019" class="video-link" data-video-id="456239019">
+                                    <div class="video-thumbnail">
+                                        <img src="img/2.jpg" alt="Видео 2">
+                                        <div class="video-play-icon"></div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Для рекламы ги</h3>
+                                        <p>Рекламное видео нашей ги</p>
+                                        <div class="video-date">02.07.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="video-item">
+                                <a href="player.html?id=456239017" class="video-link" data-video-id="456239017">
+                                    <div class="video-thumbnail">
+                                        <img src="img/1.jpg" alt="Видео 1">
+                                        <div class="video-play-icon"></div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">ФорТутти на Гавайях</h3>
+                                        <p>Провели незабываемых отдых на Гавайях</p>
+                                        <div class="video-date">01.06.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <footer>
+                        <hr>
+                        <h5 style="color: white;">© 2025 ФорТутти</h5>
+                    </footer>
+                </main>
+            </div>
+        </div>
+    </section>
+    
+    <script src="scriptBody.js"></script>
+    <script src="scriptNavBar.js"></script>
+    <script src="scriptvideo.js"></script>
+    
+    <script src="scriptHappy.js"></script>
+    <script src="scriptNY.js"></script>
+    <script src="script8Marta.js"></script>
+    <script src="scriptFooter.js"></script>
+
+</body>
+</html>
