@@ -1,6 +1,15 @@
-// Всегда показывать листья для отладки
+// Проверяем текущую дату для осеннего листопада
 function isAutumnSeason() {
-    return true;
+    const now = new Date();
+    const month = now.getMonth() + 1; // январь = 1
+    const day = now.getDate();
+    
+    // Период с 1 сентября по 15 ноября
+    if (month === 9 && day >= 1) return true; // сентябрь
+    if (month === 10) return true; // октябрь
+    if (month === 11 && day <= 15) return true; // ноябрь
+    
+    return false;
 }
 
 // Красивые осенние листья (только желтые и оранжевые оттенки)
@@ -105,8 +114,6 @@ function createLeaf(container) {
     leaf.innerHTML = symbol;
     container.appendChild(leaf);
     
-    console.log('Лист создан:', symbol, 'цвет:', color);
-    
     // Запускаем анимацию
     setTimeout(() => {
         animateLeaf(leaf, startX, startY);
@@ -117,13 +124,14 @@ function createLeaf(container) {
 
 // Основная функция
 function initAutumnLeaves() {
-    console.log('Инициализация осеннего листопада...');
+    console.log('Проверяем сезон для листопада...');
     
     if (!isAutumnSeason()) {
-        console.log('Сейчас не осенний сезон');
+        console.log('Сейчас не осенний сезон (1.09 - 15.11), листопад отключен');
         return;
     }
     
+    console.log('Осенний сезон! Запускаем листопад...');
     const container = createLeavesContainer();
     
     // Создаем начальные листья с разной задержкой
@@ -140,7 +148,7 @@ function initAutumnLeaves() {
         }
     }, 2000);
     
-    console.log('Осенний листопад запущен! 🍂');
+    console.log('Осенний листопад запущен! 🍂 Период: 1 сентября - 15 ноября');
     
     // Очистка при разгрузке страницы
     window.addEventListener('beforeunload', () => {
