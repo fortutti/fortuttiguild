@@ -1,39 +1,40 @@
-// Новогодний баннер
-        
-        
-    // Проверка даты и времени
-    function checkDateTime() {
-        const now = new Date();
-        const currentMonth = now.getMonth(); // 0-11 (январь - 0)
-        const currentDate = now.getDate(); // 1-31
-        const currentHours = now.getHours();
-        const currentMinutes = now.getMinutes();
-        const banner = document.getElementById('newYearBanner');
-        const bannerContainer = document.querySelector('.new-year-banner-container');
-        
-        // Проверяем период с 00:00 1 января до 23:59 3 января
-        //const isNewYearPeriod = true; // Принудительный показ
-        const isNewYearPeriod = 
-            currentMonth === 11 && 
-            ((currentDate === 31 && (currentHours >= 23, 59, 0)) ||
-            (currentDate === 2) ||
-            (currentDate === 3 && (currentHours < 24)));
-        
-        if (isNewYearPeriod) {
-            banner.style.display = 'flex';
-            banner.classList.add('banner-visible');
-            bannerContainer.classList.add('banner-container-visible');
-            startFireworks();
-            startSnowfall();
-        } else {
-            banner.style.display = 'none';
-            banner.classList.remove('banner-visible');
-            bannerContainer.classList.remove('banner-container-visible');
-            stopAnimations();
-        }
+function checkDateTime() {
+    const now = new Date();
+
+    let nyYear = now.getFullYear();
+    if (now.getMonth() === 0 && now.getDate() <= 3) {
+        nyYear = now.getFullYear() - 1;
     }
-            
-        // Остановка анимаций
+
+    const showStart = new Date(nyYear, 11, 31, 23, 59, 0);
+    const showEnd = new Date(nyYear + 1, 0, 3, 23, 59, 59);
+
+    const shouldShow = now >= showStart && now <= showEnd;
+
+    const banner = document.getElementById('newYearBanner');
+    const bannerContainer = document.querySelector('.new-year-banner-container');
+
+    if (shouldShow) {
+        banner.style.display = 'flex';
+        banner.classList.add('banner-visible');
+        bannerContainer.classList.add('banner-container-visible');
+        startFireworks();
+        startSnowfall();
+    } else {
+        banner.style.display = 'none';
+        banner.classList.remove('banner-visible');
+        bannerContainer.classList.remove('banner-container-visible');
+        stopAnimations();
+    }
+
+    // Для диагностики (можно удалить)
+    // console.log('🎁 Баннер:', shouldShow ? 'ПОКАЗАН' : 'СКРЫТ', '| Период:', showStart, '—', showEnd);
+}
+
+// ... остальной код (stopAnimations, startSnowfall, startFireworks) остаётся без изменений ...
+
+
+// Остановка анимаций
         function stopAnimations() {
             const canvas = document.getElementById('fireworksCanvas');
             const ctx = canvas.getContext('2d');
@@ -201,3 +202,9 @@
                 canvas.height = canvas.offsetHeight;
             });
         }       
+
+
+
+// Запуск
+checkDateTime();
+setInterval(checkDateTime, 30000); // каждые 30 секунд
