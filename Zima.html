@@ -1,0 +1,145 @@
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: #80a3eb;
+            font-family: Arial, sans-serif;
+        }
+        
+        .header {
+            background-color: #2563eb;
+            color: white;
+            padding: 1rem;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        #santa-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: transparent; /* Прозрачный фон */
+        }
+        
+        #santa-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 0.5rem;
+        }
+        
+        #santa-image {
+            max-width: 100px; /* Уменьшено в 2 раза */
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
+        }
+        
+        .decoration {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: pulse 2s infinite ease-in-out;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        
+        #santa-message {
+            text-align: center;
+            padding: 0.3rem;
+            background-color: #dc2626;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Мой сайт</h1>
+    </header>
+    
+    <main class="main-content">
+        <p>Здесь контент вашего сайта...</p>
+    </main>
+    
+    <div id="santa-container" style="display: none;">
+        <div id="santa-content">
+            <div style="position: relative; width: 100%; max-width: 100px;">
+                <img id="santa-image" src="GIF/d59a1039-b63b-4b4b-85c4-6ae193f14666.gif" alt="Дед Мороз с ёлкой">
+                <div id="decorations"></div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        function checkSantaTime() {
+            const now = new Date();
+            const year = now.getFullYear();
+            
+            // Создаем даты начала и конца периода
+            const startDate = new Date(year, 11, 31, 19, 0, 0); // 31 декабря 19:00
+            const endDate = new Date(year + 1, 0, 3, 23, 59, 59); // 3 января 23:59
+            
+            const santaContainer = document.getElementById('santa-container');
+            
+            // Если текущая дата между startDate и endDate, показываем Деда Мороза
+            if (now >= startDate && now <= endDate) {
+                santaContainer.style.display = 'block';
+                createDecorations();
+            } else {
+                santaContainer.style.display = 'none';
+            }
+        }
+        
+        function createDecorations() {
+            const decorationsContainer = document.getElementById('decorations');
+            decorationsContainer.innerHTML = '';
+            
+            // Создаем 10 украшений
+            for (let i = 0; i < 10; i++) {
+                const decoration = document.createElement('div');
+                decoration.className = 'decoration';
+                decoration.style.left = (Math.random() * 80 + 10) + '%';
+                decoration.style.top = (Math.random() * 60 + 20) + '%';
+                decoration.style.animationDelay = (i * 0.2) + 's';
+                decorationsContainer.appendChild(decoration);
+            }
+        }
+        
+        // Проверяем сразу при загрузке страницы
+        checkSantaTime();
+        
+        // Проверяем каждую минуту
+        setInterval(checkSantaTime, 60000);
+    </script>
+</body>
+</html>
+```

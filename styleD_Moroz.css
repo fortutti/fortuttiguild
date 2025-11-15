@@ -1,0 +1,38 @@
+#santa-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    background: transparent;
+    pointer-events: none;
+      
+}
+
+#santa-content {
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    pointer-events: none;
+}
+
+#santa-image {
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+.decoration {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    animation: pulse 2s infinite ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+}

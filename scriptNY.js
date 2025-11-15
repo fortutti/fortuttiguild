@@ -14,8 +14,8 @@
         // Проверяем период с 00:00 1 января до 23:59 3 января
         //const isNewYearPeriod = true; // Принудительный показ
         const isNewYearPeriod = 
-            currentMonth === 0 && 
-            ((currentDate === 1 && (currentHours >= 0)) ||
+            currentMonth === 11 && 
+            ((currentDate === 31 && (currentHours >= 23, 59, 0)) ||
             (currentDate === 2) ||
             (currentDate === 3 && (currentHours < 24)));
         
@@ -201,6 +201,3 @@
                 canvas.height = canvas.offsetHeight;
             });
         }       
-
-
-        

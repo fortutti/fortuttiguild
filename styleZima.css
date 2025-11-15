@@ -1,0 +1,134 @@
+/* Снежинки - уникальные классы с префиксом */
+.snowflake-winter {
+    position: fixed;
+    top: -50px;
+    color: #e6f7ff; /* Светло-голубой по умолчанию */
+    font-size: 16px;
+    text-shadow: 0 0 4px rgba(173, 216, 230, 0.8);
+    pointer-events: none;
+    z-index: 9998;
+    user-select: none;
+    opacity: 0.9;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite;
+    will-change: transform;
+}
+
+/* Анимации для снежинок с уникальными именами */
+@keyframes snow-fall {
+    0% {
+        top: -50px;
+        transform: translateX(0) rotate(0deg);
+    }
+    100% {
+        top: 100vh;
+        transform: translateX(0) rotate(360deg);
+    }
+}
+
+@keyframes snow-sway {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes snow-fall-with-sway {
+    0% {
+        top: -50px;
+        transform: translateX(0) rotate(0deg);
+    }
+    100% {
+        top: 100vh;
+        transform: translateX(80px) rotate(360deg);
+    }
+}
+
+@keyframes snow-fall-with-sway-reverse {
+    0% {
+        top: -50px;
+        transform: translateX(0) rotate(0deg);
+    }
+    100% {
+        top: 100vh;
+        transform: translateX(-80px) rotate(-360deg);
+    }
+}
+
+/* Размеры снежинок */
+.snowflake-winter.snow-small {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.snowflake-winter.snow-medium {
+    font-size: 16px;
+}
+
+.snowflake-winter.snow-large {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+/* Стили снежинок - ГОЛУБЫЕ ОТТЕНКИ */
+.snowflake-winter.snow-style1 {
+    color: #e6f7ff; /* Очень светлый голубой */
+    text-shadow: 0 0 5px rgba(173, 216, 230, 0.9);
+}
+
+.snowflake-winter.snow-style2 {
+    color: #b3e0ff; /* Светлый голубой */
+    text-shadow: 0 0 4px rgba(135, 206, 250, 0.8);
+}
+
+.snowflake-winter.snow-style3 {
+    color: #99d6ff; /* Небесно-голубой */
+    text-shadow: 0 0 4px rgba(100, 149, 237, 0.7);
+}
+
+.snowflake-winter.snow-style4 {
+    color: #80ccff; /* Яркий голубой */
+    text-shadow: 0 0 3px rgba(30, 144, 255, 0.6);
+}
+
+.snowflake-winter.snow-style5 {
+    color: #ccefff; /* Бледно-голубой */
+    text-shadow: 0 0 6px rgba(176, 224, 230, 0.8);
+}
+
+/* Анимации снежинок */
+.snowflake-winter.snow-animation1 {
+    animation-name: snow-fall, snow-sway;
+}
+
+.snowflake-winter.snow-animation2 {
+    animation-name: snow-fall-with-sway;
+}
+
+.snowflake-winter.snow-animation3 {
+    animation-name: snow-fall-with-sway-reverse;
+}
+
+/* Скорости снежинок */
+.snowflake-winter.snow-fast {
+    animation-duration: 6s, 1.5s !important;
+}
+
+.snowflake-winter.snow-normal {
+    animation-duration: 12s, 2.5s !important;
+}
+
+.snowflake-winter.snow-slow {
+    animation-duration: 18s, 4s !important;
+}
