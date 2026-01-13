@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Видеоархив ФорТутти</title>
+    <link rel="stylesheet" href="styleBody.css">
+    <link rel="stylesheet" href="styleNavBar.css">
+
+    <link rel="stylesheet" href="styleOsen.css">
+    <link rel="stylesheet" href="styleZima.css">
+    <link rel="stylesheet" href="styleD_Moroz.css">
+
+    <link rel="stylesheet" href="styleNY.css">
+    <link rel="stylesheet" href="style8Marta.css">
+    <link rel="stylesheet" href="styleHappy.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            margin-top: 60px; /* Отступ для фиксированного навбара */
+        }
+        
+        .logo {
+            height: 80px;
+        }
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .video-card {
+            background: #2a2a2a;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            
+        }
+
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+        }
+        .video-thumbnail {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 соотношение */
+        }
+        .video-thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ff8c00;
+            font-size: 50px;
+            opacity: 0.8;
+        }
+        .video-info {
+            padding: 15px;
+        }
+        .video-title {
+            font-size: 18px;
+            margin: 0 0 10px;
+            color: #ff8c00;
+        }
+        .video-date {
+            font-size: 14px;
+            color: #aaa;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            margin-top: 30px;
+        }
+
+
+
+        /* Дополнительные стили для главной страницы */
+        .main-header {
+            text-align: center;
+            padding: 30px 20px;
+            margin: 30px auto;
+            background-color: #333;
+                    
+        }
+        
+        .main-header h1 {
+            color: #ff8c00;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .main-header p {
+            color: #ddd;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        
+        .quick-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+        
+        .link-card {
+            background: rgba(10, 10, 10, 0.8);
+            border-radius: 8px;
+            padding: 15px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+        }
+        
+        .link-card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .link-card h3 {
+            color: #ff8c00;
+            margin: 10px 0;
+        }
+        
+        .link-card p {
+            color: #aaa;
+            font-size: 0.9em;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Навигационное меню -->
+    <nav class="navbar-fortutti">
+        <div class="navbar-container">
+            <!-- Вот этот логотип должен быть кликабельным -->
+            <a class="navbar-brand" href="fortuttiguild.html" id="navLogo">
+                <img src="imglogo/Logotip1.gif" alt="ФорТутти">
+            </a>
+            
+            <!-- Кнопка мобильного меню -->
+            <button class="navbar-toggler" id="navbarToggler">☰</button>
+
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="Administracia.html">Администрация</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="foto.html">Коллажи</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="video.html">Видео</a>
+                </li>
+            </ul>
+
+            <div class="nav-social">
+                <a class="nav-shop" href="https://store.cookingdiary.game/ru-RU/" target="_blank">
+                    <span class="shop-text">Магазин</span>
+                    <span class="game-name">Cooking Diary</span>
+                </a>
+                <a class="nav-link" href="https://vk.com/club227639548?from=groups" target="_blank">
+                    <svg class="vk-icon" viewBox="0 0 24 24">
+                        <path d="M15.073 2H8.938C3.332 2 2 3.333 2 8.927v6.136C2 20.667 3.323 22 8.927 22h6.136C20.667 22 22 20.677 22 15.073V8.938C22 3.332 20.677 2 15.073 2zm3.073 14.27h-1.459c-.552 0-.718-.447-1.708-1.437-.864-.834-1.229-.938-1.448-.938-.302 0-.385.083-.385.5v1.312c0 .354-.115.563-1.042.563-1.52 0-3.291-1.021-4.5-3.01-1.771-2.615-2.166-4.437-2.166-4.583 0-.115.083-.229.25-.229h1.459c.188 0 .26.083.323.281.656 2.177 2.104 4.083 2.635 4.083.188 0 .271-.083.271-.552v-2.146c-.063-.98-.583-1.063-.583-1.417 0-.125.104-.229.229-.229h2.292c.188 0 .271.083.271.302v3.229c0 .333.135.417.229.417.188 0 .333-.104.677-.448 1.083-1.25 1.771-3.166 1.771-3.166.104-.208.187-.291.437-.291h1.459c.146 0 .229.083.187.27-.24.76-2.5 3.708-2.5 3.708-.188.25-.271.406 0 .76.135.208.583.604 1 1.01.687.688 1.229 1.229 1.354 1.604.125.406.083.604-.333.604z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Баннер 8 марта -->
+    <div id="marchBanner" class="march-banner">
+        <div class="march-message">С 8 марта, дорогие девушки ги ФорТутти!</div>
+    </div>
+
+
+    <!-- Баннер дня рождения -->
+    <div id="birthdayBanner" class="birthday-banner">
+        <div class="birthday-message">С Днём рождения, самая лучшая гильдия ФорТутти!</div>
+    </div>
+    
+
+    <!-- Новогодний баннер с поздравлением Ги 01.01 каждый год -->
+    <!-- Контейнер для баннера -->
+    <div class="new-year-banner-container">
+        <!-- Новогодний баннер с поздравлением Ги 01.01 каждый год -->
+        <div class="new-year-banner" id="newYearBanner">
+            <div class="banner-text-ny">С Новым Годом дорогие сектанты ги ФорТутти!!!</div>
+            <canvas id="fireworksCanvas"></canvas>
+        </div>
+    </div>
+
+
+    <div id="santa-container" style="display: none;">
+        <div id="santa-content">
+            <div style="position: relative; width: 100%; max-width: 100px;">
+                <img id="santa-image" src="GIF/d59a1039-b63b-4b4b-85c4-6ae193f14666.gif" alt="Дед Мороз с ёлкой">
+                <div id="decorations"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="content-wrap">   
+        <div class="container youplay-content">
+            <div class="row">
+                <main class="col-xs-12 p-0">
+
+                    <!-- Основной контент -->
+                    <div class="main-header">
+                        <img src="imglogo/Logotip1.gif" alt="ФорТутти" class="logo">
+                        <!-- <h1>Видеоархив гильдии ФорТутти</h1> -->
+                        <h1>Добро пожаловать в гильдию «ФорТутти»!</h1>
+                        <p>Мы — дружное сообщество игроков Cooking Diary, где царит веселье, творчество и кулинарные победы! 🎮🍰</p>
+                    </div>
+
+                    <!-- Быстрые ссылки -->
+                    <div class="quick-links">
+
+                        <a href="fortuttiguild.html" class="link-card">
+                            <img src="img/preview/4.jpg" alt="О гильдии">
+                            <h3>О нас</h3>
+                            <p>Узнайте больше о ФорТутти</p>
+                        </a>
+                                
+                        <a href="Administracia.html" class="link-card">
+                            <img src="img/preview/6.png" alt="Администрация">
+                            <h3>Мозг команды</h3>
+                            <p>Знакомьтесь с нашей администрацией</p>
+                        </a>
+                        
+                        <a href="foto.html" class="link-card">
+                            <img src="img/preview/2.jpg" alt="Коллажи">
+                            <h3>Коллажи</h3>
+                            <p>Яркие моменты нашей гильдии</p>
+                        </a>
+                        
+                    </div>
+
+
+                    <!-- Этот логотип просто декоративный -->
+                    <div class="header">
+                        <h1 style="font-size: 2.5em; color: #ff8c00;">Видеоархив гильдии ФорТутти</h1>
+                    </div>
+
+                    <div id="video-gallery" class="video-gallery">
+                        
+
+                        <!-- Видео 12 -->
+                        <div class="video-card">
+                                <a href="player.html?id=12&source=index">
+                                    <div class="video-thumbnail">
+                                        <img src="img/12.jpg" alt="Новый год">
+                                        <div class="play-icon">▶</div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Новый год</h3>
+                                        <div class="video-date">01.01.2025</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Видео 11 -->
+                            <div class="video-card">
+                                <a href="player.html?id=11&source=index">
+                                    <div class="video-thumbnail">
+                                        <img src="img/11.jpg" alt="Новый год">
+                                        <div class="play-icon">▶</div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Новый год</h3>
+                                        <div class="video-date">01.01.2025</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Видео 10 -->
+                            <div class="video-card">
+                                <a href="player.html?id=10&source=index">
+                                    <div class="video-thumbnail">
+                                        <img src="img10/10.gif" alt="ДР Вики">
+                                        <div class="play-icon">▶</div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">ДР Вики</h3>
+                                        <div class="video-date">19.12.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Видео 9 -->
+                            <div class="video-card">
+                                <a href="player.html?id=9&source=index">
+                                    <div class="video-thumbnail">
+                                        <img src="img/9.jpg" alt="Пары-близнецы">
+                                        <div class="play-icon">▶</div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Пары-близнецы</h3>
+                                        <div class="video-date">25.11.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Видео 8 -->
+                            <div class="video-card">
+                                <a href="player.html?id=8&source=index">
+                                    <div class="video-thumbnail">
+                                        <img src="img8/8.gif" alt="Вика, Нась и Наталек">
+                                        <div class="play-icon">▶</div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Вика, Нась и Наталек</h3>
+                                        <div class="video-date">13.11.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Видео 7 -->
+                            <div class="video-card">
+                                <a href="player.html?id=7&source=index">
+                                    <div class="video-thumbnail">
+                                        <img src="img/7.jpg" alt="Хэллоуин">
+                                        <div class="play-icon">▶</div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Хэллоуин</h3>
+                                        <div class="video-date">31.10.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Видео 6 -->
+                            <div class="video-card">
+                                <a href="player.html?id=6&source=index">
+                                    <div class="video-thumbnail">
+                                        <img src="img6/6.gif" alt="ДР Димани">
+                                        <div class="play-icon">▶</div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">ДР Димани</h3>
+                                        <div class="video-date">12.10.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Видео 5 -->
+                            <div class="video-card">
+                                <a href="player.html?id=5&source=index">
+                                    <div class="video-thumbnail">
+                                        <img src="img/5.jpg" alt="Межсезонье🧘">
+                                        <div class="play-icon">▶</div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Межсезонье🧘</h3>
+                                        <div class="video-date">09.10.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Видео 4 -->
+                            <div class="video-card">
+                                <a href="player.html?id=4&source=index">
+                                    <div class="video-thumbnail">
+                                        <img src="img4/4.gif" alt="Выжившие">
+                                        <div class="play-icon">▶</div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Выжившие</h3>
+                                        <div class="video-date">18.09.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Видео 3 -->
+                            <div class="video-card">
+                                <a href="player.html?id=3&source=index">
+                                    <div class="video-thumbnail">
+                                        <img src="img/3.jpg" alt="Для рекламы ги">
+                                        <div class="play-icon">▶</div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Для рекламы ги</h3>
+                                        <div class="video-date">04.07.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Видео 2 -->
+                            <div class="video-card">
+                                <a href="player.html?id=2&source=index">
+                                    <div class="video-thumbnail">
+                                        <img src="img/2.jpg" alt="Для рекламы ги">
+                                        <div class="play-icon">▶</div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">Для рекламы ги</h3>
+                                        <div class="video-date">02.07.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Видео 1 -->
+                            <div class="video-card">
+                                <a href="player.html?id=1&source=index">
+                                    <div class="video-thumbnail">
+                                        <img src="img/1.jpg" alt="ФорТутти на Гавайях">
+                                        <div class="play-icon">▶</div>
+                                    </div>
+                                    <div class="video-info">
+                                        <h3 class="video-title">ФорТутти на Гавайях</h3>
+                                        <div class="video-date">01.06.2024</div>
+                                    </div>
+                                </a>
+                            </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- </div> -->
+
+    <div class="footer">
+        <h5 © 2025 Гильдия ФорТутти | Все права защищены</h5>
+    </div>
+
+    <script src="scriptBody.js"></script>
+    <script src="scriptNavBar.js"></script>
+
+    <script src="scriptOsen.js"></script>
+    <script src="scriptZima.js"></script>
+    <script src="scriptD_Moroz.js"></script>
+    
+    <script src="scriptNY.js"></script>
+    <script src="script8Marta.js"></script>
+    <script src="scriptHappy.js"></script>
+    <script src="scriptFooter.js"></script>
+
+<script>
+    document.querySelectorAll('.video-card a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const videoId = new URL(this.href).searchParams.get('id');
+                
+                // Создаем всплывающее окно с плеером
+                const overlay = document.createElement('div');
+                overlay.style.position = 'fixed';
+                overlay.style.top = '0';
+                overlay.style.left = '0';
+                overlay.style.width = '100%';
+                overlay.style.height = '100%';
+                overlay.style.backgroundColor = 'rgba(0,0,0,0.9)';
+                overlay.style.zIndex = '1000';
+                overlay.style.display = 'flex';
+                overlay.style.justifyContent = 'center';
+                overlay.style.alignItems = 'center';
+                
+                const closeBtn = document.createElement('button');
+                closeBtn.textContent = '×';
+                closeBtn.style.position = 'absolute';
+                closeBtn.style.top = '20px';
+                closeBtn.style.right = '20px';
+                closeBtn.style.fontSize = '30px';
+                closeBtn.style.background = 'none';
+                closeBtn.style.border = 'none';
+                closeBtn.style.color = '#ff8c00';
+                closeBtn.style.cursor = 'pointer';
+                
+                const playerContainer = document.createElement('div');
+                playerContainer.style.width = '90%';
+                playerContainer.style.height = '80%';
+                playerContainer.style.maxWidth = '1200px';
+                
+                overlay.appendChild(closeBtn);
+                overlay.appendChild(playerContainer);
+                document.body.appendChild(overlay);
+                
+                closeBtn.addEventListener('click', () => {
+                    document.body.removeChild(overlay);
+                });
+                
+                // Загрузка VK плеера
+                const videoData = {
+                    '12': { vkId: '456239066' },
+                    '11': { vkId: '456239068' },
+                    '10': { vkId: '456239061' },
+                    '9': { vkId: '456239048' },
+                    '8': { vkId: '456239047' },
+                    '7': { vkId: '456239037' },
+                    '6': { vkId: '456239027' },
+                    '5': { vkId: '456239022' },
+                    '4': { vkId: '456239034' },
+                    '3': { vkId: '456239018' },
+                    '2': { vkId: '456239019' },
+                    '1': { vkId: '456239017' }
+                };
+                
+                if (videoData[videoId]) {
+                    playerContainer.innerHTML = `
+                        <iframe src="https://vk.com/video_ext.php?oid=-227639548&id=${videoData[videoId].vkId}&autoplay=1" 
+                                width="100%" 
+                                height="100%" 
+                                frameborder="0" 
+                                allowfullscreen 
+                                allow="autoplay; encrypted-media; fullscreen; picture-in-picture">
+                        </iframe>
+                    `;
+                } else {
+                    playerContainer.innerHTML = `
+                        <div style="color: white; text-align: center;">
+                            <h3>Видео не найдено</h3>
+                            <p>Извините, это видео временно недоступно.</p>
+                        </div>
+                    `;
+                }
+            });
+        });
+</script>
+
+</body>
+</html>
